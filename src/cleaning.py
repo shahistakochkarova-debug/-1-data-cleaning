@@ -60,6 +60,7 @@ def fill_missing(df):
     for col in ["gender", "city", "department", "position"]:
         if not df[col].mode().empty:
             df[col] = df[col].fillna(df[col].mode()[0])
+            df["city"].mode()[0]
     df["is_manager"] = df["is_manager"].fillna(False).astype(bool)
     return df
 
